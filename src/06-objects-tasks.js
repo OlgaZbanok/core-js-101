@@ -164,8 +164,6 @@ const cssSelectorBuilder = {
     obj.answer = `${this.answer}::${value}`;
     return obj;
   },
-  error(newi) {
-    if (this.i > newi) throw new Error('Selector parts should be arranged in the following order: element, id, class, attribute, pseudo-class, pseudo-element');
 
   combine(selector1, combinator, selector2) {
     const obj = Object.create(cssSelectorBuilder);

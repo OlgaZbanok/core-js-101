@@ -53,18 +53,18 @@ function willYouMarryMe(isPositiveAnswer) {
  *    })
  *
  */
-function processAllPromises(array) {
-  let err = '';
-  const promise = new Promise((resolve) => {
-    const arr = [];
+function processAllPromises(/* array */) {
+  // const promise = new Promise((resolve) => {
+  //   const arr = [];
 
-    array.forEach((el) => {
-      el.then((res) => arr.push(res)).catch((error) => { err = error; throw new Error(error); });
-    });
-    resolve(arr);
-  });
-  promise.catch(new Error(err));
-  return promise;
+  //   array.forEach((el) => {
+  //     el.then((res) => arr.push(res)).catch((error) => { throw new Error(error); });
+  //   });
+  //   resolve(arr);
+  // });
+  // promise.catch(new Error());
+  // return promise;
+  throw new Error('Not implemented');
 }
 
 /**
@@ -88,6 +88,16 @@ function processAllPromises(array) {
  */
 function getFastestPromise(/* array */) {
   throw new Error('Not implemented');
+  // console.log(array);
+  // const promise = new Promise((resolve) => {
+  //   array.forEach((el) => {
+  //     if(el.resolve){
+  //       return el;
+  //     }
+  //   });
+  // //  resolve();
+  // });
+  // return promise;
 }
 
 /**
