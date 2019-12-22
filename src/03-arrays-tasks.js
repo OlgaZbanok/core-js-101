@@ -530,20 +530,25 @@ function distinct(arr) {
  *    "Poland" => ["Lodz"]
  *   }
  */
-function group(/* array, keySelector, valueSelector */) {
-  // const myMap = new Map();
-  // let arr = [];
-  // const el = '';
-  // array.map((el) => {
-  //   if (myMap.has(el.country)) {
-  //     arr = myMap.get(el.country);
-  //     myMap.set(el.country, arr.push(el.city));
-  //   } else {
-  //     myMap.set(el.country, arr.push(el.city));
-  //   }
-  // });
-  // return myMap;
-  throw new Error('Not implemented');
+function group(array, keySelector, valueSelector) {
+  const myMap = new Map();
+
+  array.map((el) => {
+    const country = keySelector(el);
+    const city = valueSelector(el);
+    let arr = [];
+    if (myMap.has(country)) {
+      arr = myMap.get(country);
+      arr.push(city);
+      myMap.set(country, arr);
+    } else {
+      arr.push(city);
+      myMap.set(country, arr);
+    }
+    return el;
+  });
+
+  return myMap;
 }
 
 
